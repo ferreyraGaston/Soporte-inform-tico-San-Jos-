@@ -1,31 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2023 a las 22:11:41
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `restaurante`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `config`
---
 
 CREATE TABLE `config` (
   `id` int(11) NOT NULL,
@@ -41,7 +17,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `nombre`, `telefono`, `email`, `direccion`, `mensaje`) VALUES
-(1, 'Restaurante RestoBar', '957847894', 'restobar@gmail.com', 'Lima - Perú', 'Gracias por la compra');
+(1, 'Soporte San José', '3515165960', 'gastonferreyra@colegiodesanjose.edu.ar', 'Córdoba - Argentina', 'Gracias por la consulta');
 
 -- --------------------------------------------------------
 
@@ -139,10 +115,10 @@ CREATE TABLE `salas` (
 --
 
 INSERT INTO `salas` (`id`, `nombre`, `mesas`, `estado`) VALUES
-(1, 'ENTRADA PRINCIPAL', 5, 1),
-(2, 'SEGUNDO PISO', 10, 1),
-(3, 'FRENTE COCINA', 8, 1);
-
+(1, 'PLANTA BAJA', 1, 1),
+(2, 'PRIMER PISO', 1, 1),
+(3, 'SEGUNDO PISO', 1, 1),
+(4, 'BIBLIOTECA', 1, 1);
 -- --------------------------------------------------------
 
 --
@@ -177,7 +153,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `pass`, `rol`, `estado`) VALUES
-(1, 'SISTEMAS FREE', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1, 1);
+(1, 'Soporte San José', 'gastonferreyra@colegiodesanjose.edu.ar', '21232f297a57a5a743894a0e4a801fc3', 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -290,6 +266,4 @@ ALTER TABLE `pedidos`
   ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_sala`) REFERENCES `salas` (`id`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
